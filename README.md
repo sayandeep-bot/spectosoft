@@ -1,5 +1,11 @@
 # Tauri + React
 
+npm run tauri dev
+For Dev server
+
+npm run tauri build
+For Building App
+
 This template should help get you started developing with Tauri and React in Vite.
 
 ## Recommended IDE Setup
