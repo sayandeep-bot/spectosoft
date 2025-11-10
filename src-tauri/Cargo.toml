@@ -36,6 +36,20 @@ rdev = "0.5.3" # For keyboard and mouse events
 active-win-pos-rs = "0.9" # For capturing active window titles
 sysinfo = "0.29" # For process listing (basic browser detection)
 dirs = "6.0.0"
+windows-capture="1.5.0"
+oneshot = "0.1.6"
+# Low-level Windows API access (as requested by your manager)
+windows = { version = "0.54", features = [
+    "Win32_Foundation",
+    "Win32_System_Com",
+    "Win32_Media_MediaFoundation",
+    "Win32_System_Threading",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Graphics_Gdi",
+    "Win32_Media_Audio",
+] }
 
 [features]
 custom-protocol = ["tauri/custom-protocol"]

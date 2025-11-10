@@ -22,9 +22,6 @@ use super::MainAppState;
 //     pub is_running: Arc<Mutex<bool>>,
 // }
 
-
-
-
 #[tauri::command]
 pub fn start_screenshot_service(app: tauri::AppHandle, state: tauri::State<MainAppState>) {
     // FIX: Access `screenshot_is_running` from MainAppState

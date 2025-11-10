@@ -19,14 +19,16 @@ export default function Dashboard() {
 
   const handleStart = async () => {
     // await invoke("start_screenshot_service");
-    await invoke("start_activity_logging_service");
+    // await invoke("start_activity_logging_service");
+    await invoke("start_video_recording_service");
     setIsRunning(true);
     setTime(0);
   };
 
   const handleStop = async () => {
     // await invoke("stop_screenshot_service");
-    await invoke("stop_activity_logging_service");
+    // await invoke("stop_activity_logging_service");
+    await invoke("stop_video_recording_service");
     setIsRunning(false);
   };
 
