@@ -20,7 +20,13 @@ export default function Dashboard() {
   const handleStart = async () => {
     // await invoke("start_screenshot_service");
     // await invoke("start_activity_logging_service");
-    await invoke("start_video_recording_service");
+    await invoke("start_video_recording", {
+      fps: 15, // This was the missing key
+      container: 'Mp4',
+      segmentDuration: 300,
+      audio: true,
+      audioSource: 'Both',
+    });
     setIsRunning(true);
     setTime(0);
   };
@@ -28,7 +34,7 @@ export default function Dashboard() {
   const handleStop = async () => {
     // await invoke("stop_screenshot_service");
     // await invoke("stop_activity_logging_service");
-    await invoke("stop_video_recording_service");
+    await invoke("stop_video_recording");
     setIsRunning(false);
   };
 
@@ -151,8 +157,8 @@ export default function Dashboard() {
                   onClick={handleStop}
                   disabled={!isRunning && time === 0}
                   className={`flex-1 px-8 py-5 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg ${!isRunning && time === 0
-                      ? 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none'
-                      : 'bg-gradient-to-r from-[#d42729] via-[#e52e2e] to-[#ff4b4b] hover:from-[#b81f21] hover:to-[#ff2f2f] text-white shadow-[0_0_15px_rgba(212,39,41,0.5)]'
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none'
+                    : 'bg-gradient-to-r from-[#d42729] via-[#e52e2e] to-[#ff4b4b] hover:from-[#b81f21] hover:to-[#ff2f2f] text-white shadow-[0_0_15px_rgba(212,39,41,0.5)]'
                     }`}
                 >
                   <div className="flex items-center justify-center gap-3">
